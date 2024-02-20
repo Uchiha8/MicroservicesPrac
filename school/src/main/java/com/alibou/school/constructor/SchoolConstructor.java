@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class SchoolConstructor {
 
+
     private final SchoolService schoolService;
 
     @PostMapping("/save")
