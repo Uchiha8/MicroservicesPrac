@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SchoolService {
     private final SchoolRepository schoolRepository;
-    private StudentClient client;
+    private final StudentClient client;
 
     public void saveSchool(School school) {
         schoolRepository.save(school);
@@ -27,6 +27,7 @@ public class SchoolService {
         var school = schoolRepository.findById(schoolId).orElse(null);
         // implement the logic to find students by school id
         var student = client.findAllStudentsBySchoolId(schoolId);
+        assert school != null;
         return FullSchoolResponse.builder()
                 .name(school.getName())
                 .email(school.getEmail())
