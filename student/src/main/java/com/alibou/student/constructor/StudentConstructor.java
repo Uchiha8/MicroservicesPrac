@@ -23,4 +23,9 @@ public class StudentConstructor {
     public ResponseEntity<?> getAllStudents() {
         return ResponseEntity.ok(studentService.getAllStudents());
     }
+
+    @GetMapping("/school/{school-id}")
+    public ResponseEntity<?> findAllStudents(@PathVariable("school-id") Long schoolId){
+        return ResponseEntity.ok(studentService.findAllStudentsBySchoolId(schoolId));
+    }
 }
