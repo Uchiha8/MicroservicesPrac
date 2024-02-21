@@ -1,6 +1,5 @@
 package com.alibou.school.domain;
 
-import jakarta.persistence.Entity;
 import lombok.*;
 
 import java.util.List;
